@@ -471,6 +471,7 @@ clients-link:focus {
   padding: 15px;
   margin-right: 12px;
   background: var(--hero-footer-color);
+  color: var(--title-color);
   border: 1px solid rgba(255, 255, 255, 0.3);
   box-sizing: border-box;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
@@ -513,14 +514,13 @@ clients-link:focus {
 }
 .modal {
   position: absolute;
-  width: 528px;
-  height: 581px;
+  width: 100%;
+  max-width: 528px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   transition: transform 500ms var(--timing-function);
   background-color: var(--title-color);
-  padding: 8px;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
@@ -545,6 +545,81 @@ clients-link:focus {
 }
 .backdrop.is-hidden .modal {
   transform: translate(-50%, -50%) scale(0);
+}
+/*Заполненное модальное окно*/
+.modal-form {
+  display: flex;
+  flex-direction: column;
+  max-width: 528px;
+  padding: 40px;
+}
+.modal-form-field {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.form-name {
+  display: flex;
+  flex-wrap: nowrap;
+  margin-bottom: 12px;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.15;
+  text-align: center;
+  color: var(--secondary-text-color);
+}
+.modal-text {
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.01em;
+  color: var(--main-text-color);
+}
+.form-input {
+  display: block;
+  width: 448px;
+  height: 40px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+.modal-icons {
+  position: absolute;
+  bottom: 11px;
+  left: 12px;
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+}
+textarea.form-input {
+  padding: 12px 16px;
+  height: 120px;
+  resize: none;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+.form-terms {
+  margin-bottom: 30px;
+}
+.modal-btn {
+  padding: 10px 56px;
+  margin-bottom: 40px;
+  width: 200px;
+  background: var(--accent-color);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 1.87;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.06em;
+  color: var(--title-color);
+}
+.btn-thumb {
+  display: flex;
+  justify-content: center;
 }
 
 /*Портфолио*/
