@@ -476,6 +476,7 @@ clients-link:focus {
   box-sizing: border-box;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
   border-radius: 4px;
+  transition: border color var(--time-duration) var(--timing-function);
 }
 .form-field input::placeholder {
   font-size: 16px;
@@ -483,6 +484,10 @@ clients-link:focus {
   display: flex;
   align-items: center;
   color: rgba(255, 255, 255, 0.6);
+}
+.form-field input:focus {
+  border-color: var(--title-color);
+  outline-style: none;
 }
 .btn-footer {
   display: flex;
@@ -501,6 +506,7 @@ clients-link:focus {
 }
 .form-send {
   margin-left: 10px;
+  fill: var(--title-color);
 }
 /*Модальное окно*/
 .backdrop {
@@ -576,20 +582,30 @@ clients-link:focus {
 }
 .form-input {
   display: block;
+  padding-left: 42px;
   width: 448px;
   height: 40px;
   border: 1px solid rgba(33, 33, 33, 0.2);
   box-sizing: border-box;
   border-radius: 4px;
+  transition: border-color var(--time-duration) var(--timing-function);
 }
+
 .modal-icons {
   position: absolute;
   bottom: 11px;
   left: 12px;
-  display: inline-block;
-  width: 18px;
-  height: 18px;
+  fill: var(--secondary-text-color);
+  transition: border-color var(--time-duration) var(--timing-function);
 }
+.form-input:focus {
+  border-color: var(--accent-color);
+  outline: none;
+}
+.form-input:focus + .modal-icons {
+  fill: var(--accent-color);
+}
+
 textarea.form-input {
   padding: 12px 16px;
   height: 120px;
@@ -598,12 +614,43 @@ textarea.form-input {
   box-sizing: border-box;
   border-radius: 4px;
 }
-.form-terms {
+.checkbox-link {
   margin-bottom: 30px;
+  font-size: 14px;
+  line-height: 1.71;
 }
+.checkbox-input {
+  /*appearance: none;*/
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+.checkbox-input:checked + .checkbox-label::before {
+  background-color: var(--accent-color);
+  border: none;
+  background-image: url(../Images/Icons/iconcheck.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+.checkbox-label::before {
+  display: inline-block;
+  content: "";
+  width: 16px;
+  height: 15px;
+  border: 1px solid var(--secondary-text-color);
+  border-radius: 3px;
+}
+.checkbox-link {
+  color: var(--accent-color);
+}
+
 .modal-btn {
   padding: 10px 56px;
   margin-bottom: 40px;
+  margin-top: 30px;
   width: 200px;
   background: var(--accent-color);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
@@ -616,6 +663,8 @@ textarea.form-input {
   text-align: center;
   letter-spacing: 0.06em;
   color: var(--title-color);
+  cursor: pointer;
+  transition: ;
 }
 .btn-thumb {
   display: flex;
