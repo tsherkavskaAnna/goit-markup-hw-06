@@ -497,7 +497,9 @@
             <input
               type="text"
               name="user_name"
-              pattern="[A-Za-zА-Яа-яЁё]"
+              required
+              pattern="^[a-zA-Z]+\s[a-zA-Z]+$"
+              title="Username must be two words separated by space."
               class="form-input"
               placeholder=" "
             />
@@ -511,6 +513,7 @@
               type="tel"
               class="form-input"
               name="user_phone"
+              required
               pattern="[0-9]{5,10}"
               placeholder=" "
             />
@@ -524,6 +527,7 @@
               type="email"
               class="form-input"
               name="user_email"
+              required
               placeholder=" "
             />
             <svg class="modal-icons" width="18" height="18">
@@ -550,10 +554,7 @@
             Соглашаюсь с рассылкой и принимаю
             <a href="#" class="checkbox-link">Условия договора</a>
           </label>
-
-          <div class="btn-thumb">
-            <button class="modal-btn" type="submit">Отправить</button>
-          </div>
+          <button class="modal-btn" type="submit">Отправить</button>
         </form>
       </div>
     </div>

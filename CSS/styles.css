@@ -544,6 +544,12 @@ clients-link:focus {
   fill: var(--secondary-text-color);
   transition: fill var(--time-duration) var(--timing-function);
 }
+.modal-close:hover {
+  fill: var(--accent-color);
+}
+.modal-close:focus {
+  fill: var(--accent-color);
+}
 .backdrop.is-hidden {
   opacity: 0;
   visibility: hidden;
@@ -588,6 +594,8 @@ clients-link:focus {
   border: 1px solid rgba(33, 33, 33, 0.2);
   box-sizing: border-box;
   border-radius: 4px;
+  outline: none;
+  cursor: pointer;
   transition: border-color var(--time-duration) var(--timing-function);
 }
 
@@ -597,10 +605,16 @@ clients-link:focus {
   left: 12px;
   fill: var(--secondary-text-color);
   transition: border-color var(--time-duration) var(--timing-function);
+  transition: fill var(--time-duration) var(--timing-function);
+}
+.form-input:hover {
+  border-color: var(--accent-color);
+}
+.form-input:hover + .modal-icons {
+  fill: var(--accent-color);
 }
 .form-input:focus {
   border-color: var(--accent-color);
-  outline: none;
 }
 .form-input:focus + .modal-icons {
   fill: var(--accent-color);
@@ -619,6 +633,7 @@ textarea.form-input {
   font-size: 14px;
   line-height: 1.71;
 }
+
 .checkbox-input {
   /*appearance: none;*/
   position: absolute;
@@ -642,14 +657,22 @@ textarea.form-input {
   height: 15px;
   border: 1px solid var(--secondary-text-color);
   border-radius: 3px;
+  transition: border-color var(--time-duration) var(--timing-function);
 }
+
 .checkbox-link {
   color: var(--accent-color);
 }
-
+.checkbox-input:hover + .checkbox-label::before {
+  border-color: var(--accent-color);
+}
+.checkbox-input:focus + .checkbox-label::before {
+  border-color: var(--accent-color);
+}
 .modal-btn {
+   display: block;
   padding: 10px 56px;
-  margin-bottom: 40px;
+  margin: 0 auto;
   margin-top: 30px;
   width: 200px;
   background: var(--accent-color);
@@ -664,11 +687,7 @@ textarea.form-input {
   letter-spacing: 0.06em;
   color: var(--title-color);
   cursor: pointer;
-}
-.btn-thumb {
-  display: flex;
-  justify-content: center;
-}
+
 
 /*Портфолио*/
 .list-buttons {
